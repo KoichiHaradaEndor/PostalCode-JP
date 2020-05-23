@@ -1,0 +1,29 @@
+﻿{
+	"class": {},
+	"error": {
+		"methods": [
+			"error_catch",
+			"error_get",
+			"error_handler",
+			"error_throw",
+			"error_try"
+		]
+	},
+	"methods": {
+		"methods": [
+			"createDatabase",
+			"getDatabasePath",
+			"PostalCode",
+			"queryByAddress",
+			"queryByCode",
+			"readCsvFile",
+			"readGeneralCsvFile",
+			"readOfficeCsvFile",
+			"sortCsvFiles",
+			"webQueryByAddress",
+			"webQueryByCode",
+			"webServer"
+		]
+	},
+	"trash": {}
+}
