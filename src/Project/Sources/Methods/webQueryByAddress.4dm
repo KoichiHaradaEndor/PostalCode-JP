@@ -13,11 +13,11 @@ $next_o:=$3
 Case of 
 	: ($req_o.query=Null:C1517)
 		
-		$res_o.status(400).json(New object:C1471("message";"The 'address' parameter is required."))
+		$res_o.status(400).set("Access-Control-Allow-Origin";"*").json(New object:C1471("message";"The 'address' parameter is required."))
 		
 	: ($req_o.query["address"]=Null:C1517)
 		
-		$res_o.status(400).json(New object:C1471("message";"The 'address' parameter is required."))
+		$res_o.status(400).set("Access-Control-Allow-Origin";"*").json(New object:C1471("message";"The 'address' parameter is required."))
 		
 	Else 
 		
