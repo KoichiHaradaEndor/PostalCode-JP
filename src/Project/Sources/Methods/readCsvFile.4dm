@@ -17,6 +17,7 @@
 */
 
 C_OBJECT:C1216($1;$folder_o)
+C_COLLECTION:C1488($0;$result_c)
 
 C_COLLECTION:C1488($files_c)
 C_OBJECT:C1216($file_o;$result_o)
@@ -25,10 +26,16 @@ C_TEXT:C284($filename_t)
 ASSERT:C1129(OB Instance of:C1731($1;4D:C1709.Folder))
 
 $folder_o:=$1
+$result_c:=New collection:C1472()
 
 Case of 
 	: ($folder_o.exists=False:C215)
 		
+		$result_o.success:=False:C215
+		$result_o.message:="The specified folder does not exist."
+		$result_o.folder:=$folder_o
+		
+		$result_c.push($result_o)
 		
 	Else 
 		
@@ -52,6 +59,9 @@ Case of
 					
 			End case 
 			
+			$result_o.file:=$file_o
+			$result_c.push($result_o)
+			
 			If ($result_o.success)
 				
 				$file_o.delete()
@@ -61,3 +71,5 @@ Case of
 		End for each 
 		
 End case 
+
+$0:=$result_c
